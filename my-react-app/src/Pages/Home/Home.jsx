@@ -1,14 +1,10 @@
-import Features from "../../components/Features/Feature"; 
-import '../../Global/mixins.scss';
-import '../../Global/mixins.scss';
-import '../../Global/Global.scss';
-import '../../Global/Typography.scss';
-import '../../Global/utills.scss';
-import './Home.scss';
+import Features from "../../components/Features/Features";
+
 const Home = () => {
   return (
     <main>
       <div className="hero">
+        {}
         <img src="/img/bank-tree.jpeg" alt="Bank Tree" />
         <section className="hero__content">
           <h2 className="sr-only">Promoted Content</h2>
