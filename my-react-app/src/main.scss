@@ -1,0 +1,20 @@
+// main.scss
+
+@use "./Global/Global.scss"; 
+
+@use "./global/Mixin.scss";
+@use "./global/Reset.scss";
+@use "./global/Typographie.scss";
+@use "./global/Utils.scss";
+
+@use "./components/Account/Account.scss";
+@use "./components/Features/features.scss";
+
+@use "./components/Footer/Footer.scss";
+@use "./components/Form/Form.scss";
+@use "./components/Navbar/Navbar.scss";
+@use "./components/ModalFeature/ModalFeature.scss";
+
+@use "./pages/Home/home.scss";
+@use "./pages/SignIn/signIn.scss";
+@use "./pages/User/user.scss";
