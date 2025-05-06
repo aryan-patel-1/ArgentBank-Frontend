@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"; 
+import { setToken, setUserName } from "../../Redux/userSlice"; 
 
 const Form = () => {
   const postForm = useRef();
   const errorRef = useRef();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [error, setError] = useState("");
 
   const handleForm = async (e) => {
@@ -30,8 +33,26 @@ const Form = () => {
 
       if (response.ok) {
         const token = data.body.token;
-        localStorage.setItem("authToken", token); // ✅ Stockage du token
-        navigate("/user"); // redirection utilisateur
+        dispatch(setToken(token));
+
+        // Récupérer les données de l'utilisateur avec le token
+        const userResponse = await fetch("http://localhost:3001/api/v1/user/profile", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`, // Ajout du token d'authentification
+          },
+        });
+
+        const userData = await userResponse.json();
+        if (userResponse.ok) {
+          console.log("Données de l'utilisateur:", userData);
+          // Mettre à jour le nom de l'utilisateur dans Redux
+          dispatch(setUserName(userData.body.userName)); // Ici, vous récupérez le nom de l'utilisateur
+          navigate("/user"); // Redirection vers la page utilisateur
+        } else {
+          setError(userData.message || "Impossible de récupérer les informations de l'utilisateur");
+        }
       } else {
         setError(data.message || "Échec de connexion");
       }
