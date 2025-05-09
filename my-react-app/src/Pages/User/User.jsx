@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { setUserName } from '../../redux/userSlice'; // Importer l'action
+import { setUserName } from '../../Redux/userSlice'; 
 import './user.scss';
 
 function User() {

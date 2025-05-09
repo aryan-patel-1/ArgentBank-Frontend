@@ -1,54 +1,44 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import './Navbar.scss';
+import { logout } from "../../Redux/userSlice";
 
 const Navbar = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Récupérer l'état utilisateur depuis Redux
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const userName = useSelector((state) => state.user.userName || "User"); // Le nom de l'utilisateur
+
   const handleLogout = () => {
-    setIsAuthenticated(false); 
-    setUser(null);
-    navigate("/"); 
+    dispatch(logout()); // Action Redux pour la déconnexion
+    navigate("/"); // Redirige vers la page d'accueil
   };
 
   return (
     <header>
       <nav className="navbar">
         <Link to="/" className="navbar__logo" aria-current="page">
-          {}
           <img src="/img/argentBankLogo.png" alt="Argent Bank logo" />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
 
         {!isAuthenticated ? (
-          <Link
-            to="/signIn"
-            className="navbar__link"
-            aria-label="Sign In to your account"
-          >
-            <i>
-              <FontAwesomeIcon icon={faCircleUser} />
-            </i>
+          <Link to="/signIn" className="navbar__link">
+            <FontAwesomeIcon icon={faCircleUser} />
             <span>Sign In</span>
           </Link>
         ) : (
-          <div className="log">
+          <div className="navbar__user">
             <Link to="/user" className="navbar__link">
-              <i>
-                <FontAwesomeIcon icon={faCircleUser} />
-              </i>
-              <span>{user?.userName}</span>
+              <FontAwesomeIcon icon={faCircleUser} />
+              <span className="navbar__username">{userName}</span> {/* Affichage du userName */}
             </Link>
             <button onClick={handleLogout} className="navbar__link">
-              <i>
-                <FontAwesomeIcon icon={faArrowRightFromBracket} />
-              </i>
-              <span>Log Out</span>
+              <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              <span>Sign Out</span>
             </button>
           </div>
         )}
