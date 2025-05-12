@@ -1,10 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { setUserName } from '../../Redux/userSlice'; 
+import { useNavigate } from 'react-router-dom';
 import './user.scss';
 
 function User() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Utiliser le state Redux de façon sécurisée
   const userState = useSelector((state) => state.user || {});
@@ -108,7 +110,27 @@ function User() {
           <p className="account-amount-description">Available Balance</p>
         </div>
         <div className="account-content-wrapper cta">
-          <button className="transaction-button">View transactions</button>
+          <button 
+            className="transaction-button" 
+            onClick={() => navigate('/transactions')}
+          >
+            View transactions
+          </button>
+        </div>
+      </section>
+      <section className="account">
+        <div className="account-content-wrapper">
+          <h3 className="account-title">Argent Bank Savings (x6712)</h3>
+          <p className="account-amount">$10,928.42</p>
+          <p className="account-amount-description">Available Balance</p>
+        </div>
+        <div className="account-content-wrapper cta">
+          <button 
+            className="transaction-button"
+            onClick={() => navigate('/transactions')}
+          >
+            View transactions
+          </button>
         </div>
       </section>
       <section className="account">
@@ -118,16 +140,12 @@ function User() {
           <p className="account-amount-description">Available Balance</p>
         </div>
         <div className="account-content-wrapper cta">
-          <button className="transaction-button">View transactions</button>
-        </div>
-      </section><section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Checking (x8349)</h3>
-          <p className="account-amount">$2,082.79</p>
-          <p className="account-amount-description">Available Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-          <button className="transaction-button">View transactions</button>
+          <button 
+            className="transaction-button"
+            onClick={() => navigate('/transactions')}
+          >
+            View transactions
+          </button>
         </div>
       </section>
     </main>
