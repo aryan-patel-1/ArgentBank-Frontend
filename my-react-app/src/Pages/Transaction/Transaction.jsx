@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './Transaction.scss';
+// Import de Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Transaction = () => {
   const [transactions] = useState([
@@ -41,27 +44,38 @@ const Transaction = () => {
       </div>
 
       <section className="transactions-list">
+        <div className="transaction-table-header">
+          <div className="column-date">Date</div>
+          <div className="column-description">Description</div>
+          <div className="column-amount">Amount</div>
+          <div className="column-balance">Balance</div>
+        </div>
+        
         {transactions.map((transaction, index) => (
           <div key={index} className="transaction-item">
             <div className="transaction-details">
-              <div className="transaction-date">{transaction.date}</div>
-              <div className="transaction-description">{transaction.description}</div>
-              <div className="transaction-amount">{transaction.amount}</div>
-              <div className="transaction-balance">{transaction.balance}</div>
+              <div className="column-date" data-label="Date">{transaction.date}</div>
+              <div className="column-description" data-label="Description">{transaction.description}</div>
+              <div className="column-amount" data-label="Amount">{transaction.amount}</div>
+              <div className="column-balance" data-label="Balance">{transaction.balance}</div>
             </div>
             <div className="transaction-edit">
               <div className="transaction-type">
-                Transaction Type: {transaction.transactionType}
+                Transaction type: <span>{transaction.transactionType}</span>
               </div>
               <div className="transaction-category">
-                <label>Category</label>
-                <select>
-                  <option>{transaction.category}</option>
-                </select>
+                <label>Category:</label>
+                <span className="editable-field">
+                  {transaction.category}
+                  <FontAwesomeIcon icon={faPencilAlt} className="edit-icon" />
+                </span>
               </div>
               <div className="transaction-notes">
-                <label>Notes</label>
-                <input type="text" defaultValue={transaction.notes} />
+                <label>Note:</label>
+                <span className="editable-field">
+                  {transaction.notes}
+                  <FontAwesomeIcon icon={faPencilAlt} className="edit-icon" />
+                </span>
               </div>
             </div>
           </div>

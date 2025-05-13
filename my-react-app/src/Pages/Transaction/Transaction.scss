@@ -1,86 +1,161 @@
 // transaction.scss
 
 .transaction-page {
-    padding: 30rem;
-    color: #fff;
+  padding: 30rem;
+  color: #fff;
+  
+  .transaction-header {
+    text-align: center;
+    margin-bottom: 30rem;
+
+    h1 {
+      color: #fff;
+      font-size: 30rem;
+      margin-bottom: 15rem;
+    }
+
+    .account-balance {
+      font-size: 45rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .balance-type {
+      font-size: 18rem;
+      color: #ccc;
+    }
+  }
+
+  .transactions-list {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20rem;
+  }
+  
+  .transaction-table-header {
+    display: flex;
+    margin-bottom: 10rem;
+    padding-bottom: 10rem;
+    border-bottom: 2px solid #ddd;
+    color: #000;
+    font-weight: bold;
     
-    .transaction-header {
-      text-align: center;
-      margin-bottom: 30rem;
+    > div {
+      padding: 0 10rem;
+    }
+  }
   
-      h1 {
-        color: #fff;
-        font-size: 30rem;
-        margin-bottom: 15rem;
-      }
+  .column-date {
+    width: 15%;
+  }
   
-      .account-balance {
-        font-size: 45rem;
+  .column-description {
+    width: 40%;
+  }
+  
+  .column-amount, .column-balance {
+    width: 20%;
+    text-align: right;
+  }
+
+  .transaction-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 15rem 0;
+    
+  
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .transaction-details {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    color: #000;
+    font-size: 16rem;
+    
+    > div {
+      padding: 0 10rem;
+    }
+  }
+
+  .transaction-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    color: #000;
+    font-size: 14rem;
+    padding: 15rem 10rem;
+
+    label {
+      margin-right: 10rem;
+      font-weight: bold;
+    }
+    
+    .transaction-type {
+      margin-bottom: 5rem;
+      span {
         font-weight: bold;
-        color: #fff;
-      }
-  
-      .balance-type {
-        font-size: 18rem;
-        color: #ccc;
       }
     }
-  
-    .transactions-list {
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 20rem;
-    }
-  
-    .transaction-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #ddd;
-      padding: 15rem 0;
-  
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  
-    .transaction-details {
-      display: flex;
-      flex-grow: 1;
+    
+    .editable-field {
+      position: relative;
+      display: inline-flex;
       align-items: center;
-      color: #000;
-      gap: 20rem;
-      font-size: 16rem;
+      padding: 5rem;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      min-width: 120rem;
+      background-color: #fff;
+      
+      .edit-icon {
+        margin-left: 10rem;
+        color: #6b6b6b;
+        cursor: pointer;
+        font-size: 14rem;
+      }
     }
-  
-    .transaction-edit {
-      display: flex;
+
+    select {
+      padding: 5rem;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .transaction-table-header {
+      display: none;
+    }
+    
+    .transaction-item {
+      padding: 10rem 0;
+    }
+
+    .transaction-details {
       flex-direction: column;
-      gap: 10rem;
-      color: #000;
-      font-size: 14rem;
-  
-      label {
-        margin-right: 10rem;
-        font-weight: bold;
+      align-items: flex-start;
+      
+      > div {
+        width: 100%;
+        padding: 5rem 10rem;
+        display: flex;
+        justify-content: space-between;
+        
+        &::before {
+          content: attr(data-label);
+          font-weight: bold;
+        }
       }
-  
-      select, input {
-        padding: 5rem;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-      }
-    }
-  
-    @media screen and (max-width: 767px) {
-      .transaction-item {
-        flex-direction: column;
-        gap: 15rem;
-      }
-  
-      .transaction-details {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10rem;
+      
+      .column-amount, .column-balance {
+        text-align: right;
       }
     }
   }
+}
