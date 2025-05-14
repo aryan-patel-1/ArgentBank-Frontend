@@ -1,11 +1,10 @@
-.bg-dark {
+.bg-dark-signin {
   background-color: #12002b;
-  min-height: 100vh;
-  display: flex;
+  min-height: 82vh;
   align-items: center;
   justify-content: center;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 80rem;
 }
 
 .sign-in-content {
@@ -15,7 +14,7 @@
   background-color: white;
   width: 300px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 30rem;
   box-sizing: border-box;
   border-radius: 0.25rem;
   

@@ -4,7 +4,7 @@ import Form from "../../components/Form/Form";
 
 const SignIn = () => {
   return (
-    <main className="bg-dark">
+    <main className="bg-dark-signin">
       <section className="sign-in-content">
         <i>
           <FontAwesomeIcon icon={faCircleUser} />

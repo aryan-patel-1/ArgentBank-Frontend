@@ -63,7 +63,7 @@ function User() {
   }
 
   return (
-    <main className="main bg-dark">
+    <main className="bg-dark-user">
       <div className="header">
         {!isEditing ? (
           <>

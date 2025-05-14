@@ -36,7 +36,7 @@ const Transaction = () => {
   ]);
 
   return (
-    <main className="main bg-dark transaction-page">
+    <main className="bg-dark-transaction transaction-page">
       <div className="transaction-header">
         <h1>Argent Bank Checking (x8349)</h1>
         <p className="account-balance">$48,098.43</p>

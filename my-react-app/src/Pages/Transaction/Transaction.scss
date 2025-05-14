@@ -1,27 +1,27 @@
-// transaction.scss
-
-.transaction-page {
-  padding: 30rem;
+.bg-dark-transaction {
+  padding: 30px;
   color: #fff;
+  background-color: #12002B; 
+  min-height: 100vh;
   
   .transaction-header {
     text-align: center;
-    margin-bottom: 30rem;
+    margin-bottom: 30px;
 
     h1 {
       color: #fff;
-      font-size: 30rem;
-      margin-bottom: 15rem;
+      font-size: 30px;
+      margin-bottom: 15px;
     }
 
     .account-balance {
-      font-size: 45rem;
+      font-size: 45px;
       font-weight: bold;
       color: #fff;
     }
 
     .balance-type {
-      font-size: 18rem;
+      font-size: 18px;
       color: #ccc;
     }
   }
@@ -29,19 +29,19 @@
   .transactions-list {
     background-color: #fff;
     border-radius: 5px;
-    padding: 20rem;
+    padding: 20px;
   }
   
   .transaction-table-header {
     display: flex;
-    margin-bottom: 10rem;
-    padding-bottom: 10rem;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #ddd;
     color: #000;
     font-weight: bold;
     
     > div {
-      padding: 0 10rem;
+      padding: 0 10px;
     }
   }
   
@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid #ddd;
-    padding: 15rem 0;
+    padding: 15px 0;
     
   
 
@@ -76,28 +76,28 @@
     flex-grow: 1;
     align-items: center;
     color: #000;
-    font-size: 16rem;
+    font-size: 16px;
     
     > div {
-      padding: 0 10rem;
+      padding: 0 10px;
     }
   }
 
   .transaction-edit {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 10px;
     color: #000;
-    font-size: 14rem;
-    padding: 15rem 10rem;
+    font-size: 14px;
+    padding: 15px 10px;
 
     label {
-      margin-right: 10rem;
+      margin-right: 10px;
       font-weight: bold;
     }
     
     .transaction-type {
-      margin-bottom: 5rem;
+      margin-bottom: 5px;
       span {
         font-weight: bold;
       }
@@ -107,55 +107,25 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      padding: 5rem;
+      padding: 5px;
       border: 1px solid #ddd;
       border-radius: 3px;
-      min-width: 120rem;
+      min-width: 120px;
       background-color: #fff;
       
       .edit-icon {
-        margin-left: 10rem;
+        margin-left: 10px;
         color: #6b6b6b;
         cursor: pointer;
-        font-size: 14rem;
+        font-size: 14px;
       }
     }
 
     select {
-      padding: 5rem;
+      padding: 5px;
       border: 1px solid #ddd;
       border-radius: 3px;
     }
   }
 
-  @media screen and (max-width: 767px) {
-    .transaction-table-header {
-      display: none;
-    }
-    
-    .transaction-item {
-      padding: 10rem 0;
-    }
-
-    .transaction-details {
-      flex-direction: column;
-      align-items: flex-start;
-      
-      > div {
-        width: 100%;
-        padding: 5rem 10rem;
-        display: flex;
-        justify-content: space-between;
-        
-        &::before {
-          content: attr(data-label);
-          font-weight: bold;
-        }
-      }
-      
-      .column-amount, .column-balance {
-        text-align: right;
-      }
-    }
-  }
 }
