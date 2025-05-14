@@ -1,16 +1,31 @@
+.bg-dark {
+  background-color: #12002b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
 .sign-in-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    margin: auto;
-    margin-top: 45rem;
-    padding: 30rem;
-    font-size: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  
+  i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
-    .bg-dark {
-    background-color: #12002b;
-    padding-bottom: 10%;
+  &__title {
+    margin-bottom: 1.5rem;
+    color: black;
   }
-  
+}
