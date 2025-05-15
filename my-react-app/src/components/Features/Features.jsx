@@ -10,17 +10,17 @@ const Feature = ({ icon, title, text }) => (
     return (
       <>
        <Feature
-    icon="/img/icon-chat.png"
+    icon="/img/icon-chat_1.webp"
     title="You are our #1 priority"
     text="Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
   />
   <Feature
-    icon="/img/icon-money.png"
+    icon="/img/icon-money_1.webp"
     title="More savings means higher rates"
     text="The more you save with us, the higher your interest rate will be!"
   />
   <Feature
-    icon="/img/icon-security.png"
+    icon="/img/icon-security_1.webp"
     title="Security you can trust"
     text="We use top of the line encryption to make sure your data and money is always safe."
   />

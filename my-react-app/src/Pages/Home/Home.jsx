@@ -5,7 +5,7 @@ const Home = () => {
     <main>
       <div className="hero">
         {}
-        <img src="/img/bank-tree.jpeg" alt="Bank Tree" />
+        <img src="/img/bank-tree_1.webp" alt="Bank Tree" />
         <section className="hero__content">
           <h2 className="sr-only">Promoted Content</h2>
           <p className="hero__content-subtitle">

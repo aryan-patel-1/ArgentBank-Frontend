@@ -21,7 +21,7 @@ const Navbar = () => {
     <header>
       <nav className="navbar">
         <Link to="/" className="navbar__logo" aria-current="page">
-          <img src="/img/argentBankLogo.png" alt="Argent Bank logo" />
+          <img src="/img/argentBankLogo.webp" alt="Argent Bank logo" />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
 
