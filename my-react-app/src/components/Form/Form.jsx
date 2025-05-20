@@ -25,7 +25,7 @@ const Form = () => {
 
       // Vérification de la réussite du thunk
       if (action.error) {
-        setError(action.error.message); // Gestion de l'erreur
+        setError("Email or Password incorrect"); // Message d'erreur spécifique
       } else {
         // Récupérer le profil utilisateur avec le token
         const token = action.payload.token;
@@ -39,17 +39,12 @@ const Form = () => {
       }
     } catch (error) {
       console.error("Erreur complète:", error);
-      setError("Une erreur s'est produite. Veuillez réessayer.");
+      setError("Email or Password incorrect");
     }
   };
 
   return (
     <form ref={postForm} onSubmit={handleForm}>
-      {error && (
-        <div ref={errorRef} className="form-error" role="alert" aria-live="assertive">
-          {error}
-        </div>
-      )}
       <div className="input-wrapper">
         <label htmlFor="email">Email</label>
         <input id="email" name="email" type="email" required />
@@ -57,6 +52,7 @@ const Form = () => {
       <div className="input-wrapper">
         <label htmlFor="password">Password</label>
         <input id="password" name="password" type="password" required />
+        {error && <div className="input-error">{error}</div>}
       </div>
       <div className="input-remember">
         <input id="remember-me" name="remember" type="checkbox" />
