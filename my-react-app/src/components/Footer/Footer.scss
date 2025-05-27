@@ -1,16 +1,37 @@
-// footer.scss
-
+// Footer.scss avec responsive
 .footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-top: 2px solid #ccc;
-    padding: 30rem 0 22rem;
-  
-    & p {
-      font-size: 16rem;
-      line-height: normal;
-      user-select: none;
-    }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #ccc;
+  padding: 30rem 0 22rem;
+
+  & p {
+    font-size: 16rem;
+    line-height: normal;
+    user-select: none;
   }
-  
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+.footer {
+  padding: 20rem 0 15rem;
+
+  & p {
+    font-size: 14rem;
+    text-align: center;
+    padding: 0 10rem;
+  }
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+.footer {
+  padding: 25rem 0 18rem;
+
+  & p {
+    font-size: 15rem;
+  }
+  }
+  }

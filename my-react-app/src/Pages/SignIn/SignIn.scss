@@ -1,3 +1,4 @@
+// SignIn.scss avec responsive
 .bg-dark-signin {
   background-color: #12002b;
   min-height: 82vh;
@@ -25,5 +26,60 @@
   &__title {
     margin-bottom: 1.5rem;
     color: black;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .bg-dark-signin {
+    padding-top: 40rem;
+    padding-bottom: 1rem;
+  }
+
+  .sign-in-content {
+    width: 90%;
+    max-width: 350px;
+    padding: 25rem;
+
+    &__title {
+      font-size: 18rem;
+      margin-bottom: 1rem;
+    }
+
+    i {
+      font-size: 18rem;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bg-dark-signin {
+    padding-top: 60rem;
+  }
+
+  .sign-in-content {
+    width: 350px;
+    padding: 35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-dark-signin {
+    padding-top: 30rem;
+    min-height: 85vh;
+  }
+
+  .sign-in-content {
+    width: 95%;
+    max-width: 320px;
+    padding: 20rem;
+
+    &__title {
+      font-size: 16rem;
+    }
+
+    i {
+      font-size: 16rem;
+    }
   }
 }

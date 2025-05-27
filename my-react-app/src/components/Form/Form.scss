@@ -1,5 +1,4 @@
-// Form.scss
-
+// Form.scss avec responsive
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -66,4 +65,109 @@
   margin-bottom: 10rem;
   text-align: center;
   color: red;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .input-wrapper {
+    margin-bottom: 12rem;
+
+    & label {
+      margin-bottom: 4rem;
+      font-size: 14rem;
+    }
+
+    & input {
+      font-size: 16rem;
+      padding: 6rem;
+    }
+  }
+
+  .input-error {
+    font-size: 11rem;
+    margin-top: 4rem;
+  }
+
+  .input-remember {
+    & input {
+      margin: 4rem;
+    }
+
+    & label {
+      margin-left: 4rem;
+      font-size: 14rem;
+    }
+  }
+
+  .sign-in-button {
+    padding: 10rem;
+    font-size: 14rem;
+    margin-top: 12rem;
+  }
+
+  .form-error {
+    margin-bottom: 8rem;
+    font-size: 12rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .input-wrapper {
+    margin-bottom: 13rem;
+
+    & label {
+      font-size: 15rem;
+    }
+
+    & input {
+      font-size: 17rem;
+      padding: 5rem;
+    }
+  }
+
+  .sign-in-button {
+    font-size: 15rem;
+    padding: 9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-wrapper {
+    margin-bottom: 10rem;
+
+    & label {
+      font-size: 13rem;
+      margin-bottom: 3rem;
+    }
+
+    & input {
+      font-size: 14rem;
+      padding: 8rem;
+    }
+  }
+
+  .input-error {
+    font-size: 10rem;
+  }
+
+  .input-remember {
+    & input {
+      margin: 3rem;
+    }
+
+    & label {
+      margin-left: 3rem;
+      font-size: 13rem;
+    }
+  }
+
+  .sign-in-button {
+    padding: 12rem;
+    font-size: 13rem;
+    margin-top: 10rem;
+  }
+
+  .form-error {
+    font-size: 11rem;
+  }
 }
