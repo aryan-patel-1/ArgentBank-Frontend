@@ -1,0 +1,131 @@
+.bg-dark-account {
+    background-color: #12002b;
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  
+  .account {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-content-wrapper {
+    width: 100%;
+    user-select: none;
+    margin-bottom: 15px;
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .account-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+  }
+  
+  .account-amount {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 8px 0;
+    color: #2c3e50;
+  }
+  
+  .account-amount-description {
+    font-size: 14px;
+    font-weight: normal;
+    color: #6c757d;
+    margin-bottom: 0;
+  }
+  
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .transaction-button {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #00bc77;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #00a86b;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .account {
+      flex-direction: row;
+      align-items: center;
+      padding: 2rem;
+      margin-bottom: 30px;
+      max-width: 80%;
+    }
+  
+    .account-content-wrapper {
+      margin-bottom: 0;
+    }
+  
+    .cta {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  
+    .account-title {
+      font-size: 18px;
+    }
+  
+    .account-amount {
+      font-size: 37.5px;
+    }
+  
+    .account-amount-description {
+      font-size: 16px;
+    }
+  
+    .transaction-button {
+      width: auto;
+      min-width: 150px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .account {
+      max-width: 70%;
+      padding: 2.5rem;
+    }
+  
+    .account-title {
+      font-size: 20px;
+    }
+  
+    .account-amount {
+      font-size: 42px;
+    }
+  
+    .account-amount-description {
+      font-size: 18px;
+    }
+  }
+  

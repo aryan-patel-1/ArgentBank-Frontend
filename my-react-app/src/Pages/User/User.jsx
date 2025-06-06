@@ -1,13 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getUserProfile, updateUserName } from '../../Redux/userSlice';
-import { useNavigate } from 'react-router-dom';
+import Account from '../../components/Account/Account';
 import './user.scss';
 
 function User() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const { userName, firstName, lastName, token, isAuthenticated } = useSelector((state) => state.user);
 
   const [isEditing, setIsEditing] = useState(false);
@@ -101,47 +99,7 @@ function User() {
         )}
       </div>
 
-      <h2 className="sr-only">Accounts</h2>
-
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-          <p className="account-amount">$10,928.42</p>
-          <p className="account-amount-description">Available Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-          <button className="transaction-button" onClick={() => navigate('/transactions')}>
-            View transactions
-          </button>
-        </div>
-      </section>
-
-
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-          <p className="account-amount">$10,928.42</p>
-          <p className="account-amount-description">Available Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-          <button className="transaction-button" onClick={() => navigate('/transactions')}>
-            View transactions
-          </button>
-        </div>
-      </section>
-
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
-          <p className="account-amount">$184.30</p>
-          <p className="account-amount-description">Current Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-          <button className="transaction-button" onClick={() => navigate('/transactions')}>
-            View transactions
-          </button>
-        </div>
-      </section>
+      <Account />
     </main>
   );
 }
